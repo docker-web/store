@@ -1,13 +1,14 @@
 services:
-
   nicotine:
-    image: freddywullockx/nicotineplus
+    image: sirjmann92/nicotineplus-proper:latest
     container_name: nicotine
     restart: unless-stopped
     ports:
       - $PORT:$PORT_EXPOSED
     volumes:
       - "${MEDIA_DIR}/music:/downloads"
+      - config:/config # Save your config persistently
+      - data:/data # Store your logs, database, and history
     environment:
       VIRTUAL_HOST: "${DOMAIN}"
       LETSENCRYPT_HOST: "${DOMAIN}"
@@ -16,6 +17,10 @@ services:
       LOGIN: "${USERNAME}"
       PASSW: "${PASSWORD}"
       DARKMODE: "true"
+
+volumes:
+  config:
+  data:
 
 networks:
   default:
