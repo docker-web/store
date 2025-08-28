@@ -1,12 +1,6 @@
 {
   "apps": [
     {
-      "name": "code",
-      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/code.tar.gz",
-      "port": 7745
-    }
-,
-    {
       "name": "ersatztv",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/ersatztv.tar.gz",
       "port": 7847
@@ -37,12 +31,6 @@
     }
 ,
     {
-      "name": "n8n",
-      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/n8n.tar.gz",
-      "port": 7825
-    }
-,
-    {
       "name": "nextcloud",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/nextcloud.tar.gz",
       "port": 7704
@@ -52,12 +40,6 @@
       "name": "nicotine",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/nicotine.tar.gz",
       "port": 7733
-    }
-,
-    {
-      "name": "penpot",
-      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/penpot.tar.gz",
-      "port": 7707
     }
 ,
     {
