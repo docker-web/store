@@ -1,5 +1,4 @@
 services:
-
   nextcloud:
     build: .
     container_name: nextcloud
@@ -14,6 +13,7 @@ services:
       - config:/var/www/html/config
       - apps:/var/www/html/apps
       - $MEDIA_DIR:/mnt/media
+      - ./init-scripts:/docker-entrypoint-hooks.d/post-installation:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
     environment:
       VIRTUAL_HOST: "${DOMAIN}"
@@ -53,7 +53,7 @@ services:
     restart: unless-stopped
     command: redis-server --requirepass $PASSWORD
     volumes:
-      - redis:/data 
+      - redis:/data
 
 volumes:
   db:
@@ -67,4 +67,3 @@ networks:
   default:
     name: dockerweb
     external: true
-
