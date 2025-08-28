@@ -9,6 +9,7 @@ services:
       GITEA__server__DOMAIN: "${DOMAIN}"
       GITEA__server__ROOT_URL: "https://${DOMAIN}/"
       GITEA__ACTIONS__DISABLE_REGISTRATION: "true"
+      GITEA__service__DISABLE_REGISTRATION: "false"
       VIRTUAL_HOST: "${DOMAIN}"
       LETSENCRYPT_HOST: "${DOMAIN}"
       VIRTUAL_PORT: "${PORT_EXPOSED}"

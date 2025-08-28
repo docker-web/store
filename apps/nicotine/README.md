@@ -4,8 +4,3 @@
   </picture>
   nicotine
 </h1>
-
-- image version: realies/nicotine
-- [x] Accessible over http ?
-- [x] Accessible over https ?
-- [ ] ARM 64 compatible ?

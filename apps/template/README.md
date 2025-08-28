@@ -4,16 +4,3 @@
   </picture>
   __APP_NAME__
 </h1>
-
-## BASE FILES
-
-config.sh
-docker-compose.yml
-logo.svg
-
-## EXTRA FILES
-
-nginx.conf
-post-install.sh
-pre-install.sh
-

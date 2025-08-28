@@ -4,8 +4,3 @@
   </picture>
   Gitea
 </h1>
-
-- image version: gitea/gitea:1.12.6
-- [x] Accessible over http ?
-- [x] Accessible over https ?
-- [x] ARM 64 compatible ?

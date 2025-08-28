@@ -7,7 +7,7 @@ services:
     ports:
       - $PORT:$PORT_EXPOSED
     volumes:
-      - "${MEDIA_DIR}/download:/downloads"
+      - "${MEDIA_DIR}/music:/downloads"
     environment:
       VIRTUAL_HOST: "${DOMAIN}"
       LETSENCRYPT_HOST: "${DOMAIN}"

@@ -1,4 +1,4 @@
-name: Deploy Nuxt App
+name: Deploy App
 on: [push]
 
 jobs:
