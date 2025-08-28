@@ -1,5 +1,6 @@
 services:
   __APP_NAME__:
+    image: local/__APP_NAME__
     build:
       context: .
       dockerfile: Dockerfile
