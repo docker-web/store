@@ -3,7 +3,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: local/__APP_NAME__:latest
     container_name: __APP_NAME__
     restart: unless-stopped
     working_dir: /app
