@@ -3,25 +3,25 @@
     {
       "name": "ersatztv",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/ersatztv.tar.gz",
-      "port": 7847
+      "port": 7706
     }
 ,
     {
       "name": "excalidraw",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/excalidraw.tar.gz",
-      "port": 7823
+      "port": 7703
     }
 ,
     {
       "name": "gitea",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/gitea.tar.gz",
-      "port": 7722
+      "port": 7701
     }
 ,
     {
       "name": "jellyfin",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/jellyfin.tar.gz",
-      "port": 7712
+      "port": 7702
     }
 ,
     {
@@ -39,7 +39,7 @@
     {
       "name": "nicotine",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/nicotine.tar.gz",
-      "port": 7733
+      "port": 7708
     }
 ,
     {
@@ -69,7 +69,7 @@
     {
       "name": "umami",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/umami.tar.gz",
-      "port": 7831
+      "port": 7709
     }
   ]
 }
