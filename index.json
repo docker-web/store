@@ -1,0 +1,93 @@
+{
+  "apps": [
+    {
+      "name": "code",
+      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/code.tar.gz",
+      "port": 7745
+    }
+,
+    {
+      "name": "ersatztv",
+      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/ersatztv.tar.gz",
+      "port": 7847
+    }
+,
+    {
+      "name": "excalidraw",
+      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/excalidraw.tar.gz",
+      "port": 7823
+    }
+,
+    {
+      "name": "gitea",
+      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/gitea.tar.gz",
+      "port": 7722
+    }
+,
+    {
+      "name": "jellyfin",
+      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/jellyfin.tar.gz",
+      "port": 7712
+    }
+,
+    {
+      "name": "launcher",
+      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/launcher.tar.gz",
+      "port": 7700
+    }
+,
+    {
+      "name": "n8n",
+      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/n8n.tar.gz",
+      "port": 7825
+    }
+,
+    {
+      "name": "nextcloud",
+      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/nextcloud.tar.gz",
+      "port": 7704
+    }
+,
+    {
+      "name": "nicotine",
+      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/nicotine.tar.gz",
+      "port": 7733
+    }
+,
+    {
+      "name": "penpot",
+      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/penpot.tar.gz",
+      "port": 7707
+    }
+,
+    {
+      "name": "proxy",
+      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/proxy.tar.gz",
+      "port": 80
+    }
+,
+    {
+      "name": "template",
+      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/template.tar.gz",
+      "port": 0
+    }
+,
+    {
+      "name": "template-nuxt",
+      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/template-nuxt.tar.gz",
+      "port": 0
+    }
+,
+    {
+      "name": "transmission",
+      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/transmission.tar.gz",
+      "port": 9091
+    }
+,
+    {
+      "name": "umami",
+      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/umami.tar.gz",
+      "port": 7831
+    }
+  ]
+}
