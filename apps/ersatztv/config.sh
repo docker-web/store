@@ -6,3 +6,4 @@ export DOMAIN_TV="tv.$MAIN_DOMAIN"
 export PORT_TV="7707"
 export PORT_TV_EXPOSED="80"
 export LAUNCHER_HIDDEN=true
+export URL_TV="https://$DOMAIN/iptv/channel/1.m3u8"
