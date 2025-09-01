@@ -12,7 +12,8 @@ services:
       - 7815:51413/udp
     volumes:
       - config:/config
-      - $MEDIA_DIR/film:/downloads/complete
+      - $MEDIA_DIR/video/film:/downloads/complete
+      - $MEDIA_DIR/video/film/incomplete:/downloads/incomplete
     environment:
       VIRTUAL_PORT: "${PORT}"
       VIRTUAL_HOST: "${DOMAIN}"
