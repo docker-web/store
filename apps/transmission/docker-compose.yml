@@ -1,5 +1,4 @@
 services:
-
   transmission:
     image: linuxserver/transmission
     container_name: transmission
@@ -18,8 +17,8 @@ services:
       VIRTUAL_PORT: "${PORT}"
       VIRTUAL_HOST: "${DOMAIN}"
       LETSENCRYPT_HOST: "${DOMAIN}"
-      PUID: "1000"
-      PGID: "1000"
+      PUID: "${PUID}"
+      PGID: "${PUID}"
       TZ: "Europe/London"
       USER: "${USERNAME}"
       PASS: "${PASSWORD}"
