@@ -33,7 +33,7 @@ do
     rm "$FOLDER_WEB/$APP_NAME.html"
     if [[ -f "$APP_PATH/logo.svg" ]]
     then
-      docker exec launcher test ! -f "/usr/share/nginx/html/$APP_NAME.svg" && docker cp "$APP_PATH/logo.svg" "launcher:/usr/share/nginx/html/$APP_NAME.svg" > /dev/null
+      docker cp "$APP_PATH/logo.svg" "launcher:/usr/share/nginx/html/$APP_NAME.svg" > /dev/null
     else
       docker cp "$PATH_DOCKERWEB_APPS/launcher/docker-web.svg" "launcher:/usr/share/nginx/html/$APP_NAME.svg" > /dev/null
     fi
