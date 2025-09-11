@@ -49,6 +49,12 @@
     }
 ,
     {
+      "name": "slskd",
+      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/slskd.tar.gz",
+      "port": 7712
+    }
+,
+    {
       "name": "template",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/template.tar.gz",
       "port": 0
