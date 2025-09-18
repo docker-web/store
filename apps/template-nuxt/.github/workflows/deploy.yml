@@ -1,13 +1,41 @@
-name: Deploy App
+name: Test and Deploy App
 on: [push]
 
 jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm run build
+      - run: tar -czf build.tar.gz .output
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nuxt-build
+          path: build.tar.gz
+
+  test:
+    runs-on: ubuntu-22.04
+    needs: build
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: nuxt-build
+      - run: tar -xzf build.tar.gz
+      - run: npm ci --omit=dev
+      - run: npm run start &
+      - run: npx wait-on http://localhost:3000
+      - run: curl -f http://localhost:3000 || exit 1
+
   deploy:
     runs-on: ubuntu-22.04
+    needs: test
     container:
       volumes:
         - /var/docker-web:/var/docker-web
-
     steps:
       - uses: actions/checkout@v4
       - name: install
