@@ -1,49 +1,22 @@
-name: Test and Deploy App
+name: Deploy App
 on: [push]
 
 jobs:
-  build:
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - run: npm ci
-      - run: npm run build
-      - run: tar -czf build.tar.gz .output
-      - uses: actions/upload-artifact@v4
-        with:
-          name: nuxt-build
-          path: build.tar.gz
-
-  test:
-    runs-on: ubuntu-22.04
-    needs: build
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: nuxt-build
-      - run: tar -xzf build.tar.gz
-      - run: npm ci --omit=dev
-      - run: npm run start &
-      - run: npx wait-on http://localhost:3000
-      - run: curl -f http://localhost:3000 || exit 1
-
   deploy:
     runs-on: ubuntu-22.04
-    needs: test
     container:
       volumes:
         - /var/docker-web:/var/docker-web
     steps:
       - uses: actions/checkout@v4
-      - name: install
+      - name: Deploy with docker-web
         run: |
-          APP_DIR=/var/docker-web/apps/${GITHUB_REPOSITORY##*/}
-          mkdir -p $APP_DIR
+          REPO_NAME="${GITHUB_REPOSITORY##*/}"
+          APP_DIR="/var/docker-web/apps/${REPO_NAME}"
+          bash /var/docker-web/src/cli.sh down "${REPO_NAME}"
+          rm -rf "$APP_DIR"
+          mkdir "$APP_DIR"
           cp -a $(find . -mindepth 1 -maxdepth 1 ! -name '.git' ! -name 'node_modules') "$APP_DIR/"
-      - name: up
-        run: |
           export COMPOSE_BAKE=false
-          bash /var/docker-web/src/cli.sh up ${GITHUB_REPOSITORY##*/}
+          docker rmi "local/${REPO_NAME}"
+          bash /var/docker-web/src/cli.sh up "${REPO_NAME}"

@@ -49,12 +49,6 @@
     }
 ,
     {
-      "name": "slskd",
-      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/slskd.tar.gz",
-      "port": 7712
-    }
-,
-    {
       "name": "template",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/template.tar.gz",
       "port": 0
@@ -63,7 +57,7 @@
     {
       "name": "template-nuxt",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/template-nuxt.tar.gz",
-      "port": 0
+      "port": 7903
     }
 ,
     {

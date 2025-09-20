@@ -1,10 +1,10 @@
 services:
-  __APP_NAME__:
-    image: local/__APP_NAME__
+  nuxtci:
+    image: local/APP-NAME
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: __APP_NAME__
+    container_name: APP-NAME
     restart: unless-stopped
     working_dir: /app
     ports:

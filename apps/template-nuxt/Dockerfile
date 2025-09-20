@@ -3,18 +3,10 @@ FROM node:20-alpine AS build
 
 WORKDIR /app
 
-# Installer pnpm
 RUN npm install -g pnpm
-
-# Copier package.json et lockfile pour cache pnpm
 COPY package.json pnpm-lock.yaml* ./
-
 RUN pnpm install --frozen-lockfile
-
-# Copier tout le projet
 COPY . .
-
-# Build Nuxt
 RUN pnpm build
 
 # Stage production
