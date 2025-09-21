@@ -37,9 +37,9 @@
     }
 ,
     {
-      "name": "nicotine",
-      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/nicotine.tar.gz",
-      "port": 7708
+      "name": "penpot",
+      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/penpot.tar.gz",
+      "port": 7904
     }
 ,
     {
