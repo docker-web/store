@@ -18,5 +18,5 @@ jobs:
           mkdir "$APP_DIR"
           cp -a $(find . -mindepth 1 -maxdepth 1 ! -name '.git' ! -name 'node_modules') "$APP_DIR/"
           export COMPOSE_BAKE=false
-          docker rmi "local/${REPO_NAME}"
+          docker rmi "local/${REPO_NAME}" 2>/dev/null || true
           bash /var/docker-web/src/cli.sh up "${REPO_NAME}"
