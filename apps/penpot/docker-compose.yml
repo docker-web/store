@@ -34,7 +34,7 @@ services:
     depends_on:
       penpot-postgres:
         condition: service_healthy
-      valkey:
+      penpot-valkey:
         condition: service_healthy
     environment:
       <<: [*penpot-flags, *penpot-public-uri, *penpot-http-body-size]
@@ -43,7 +43,7 @@ services:
       PENPOT_DATABASE_URI: postgresql://postgres/penpot
       PENPOT_DATABASE_USERNAME: penpot
       PENPOT_DATABASE_PASSWORD: "${PASSWORD}"
-      PENPOT_REDIS_URI: redis://valkey/0
+      PENPOT_REDIS_URI: redis://penpot-valkey/0
       PENPOT_ASSETS_STORAGE_BACKEND: assets-fs
       PENPOT_STORAGE_ASSETS_FS_DIRECTORY: /opt/data/assets
       PENPOT_TELEMETRY_ENABLED: false
@@ -57,7 +57,7 @@ services:
         condition: service_healthy
     environment:
       PENPOT_PUBLIC_URI: http://frontend:8080
-      PENPOT_REDIS_URI: redis://valkey/0
+      PENPOT_REDIS_URI: redis://penpot-valkey/0
 
   penpot-postgres:
     image: "postgres:15"
