@@ -1,15 +1,15 @@
 x-flags: &penpot-flags
-  PENPOT_FLAGS: enable-login-with-github enable-login-with-password disable-email-verification enable-smtp enable-prepl-server disable-secure-session-cookies
+  PENPOT_FLAGS: enable-login-with-password disable-email-verification enable-smtp enable-prepl-server disable-secure-session-cookies
 x-uri: &penpot-public-uri
-  PENPOT_PUBLIC_URI: http://localhost:9001
+  PENPOT_PUBLIC_URI: "https://${DOMAIN}"
 x-body-size: &penpot-http-body-size
   PENPOT_HTTP_SERVER_MAX_BODY_SIZE: 31457280
   PENPOT_HTTP_SERVER_MAX_MULTIPART_BODY_SIZE: 367001600
 
 services:
-  penpot-frontend:
+  penpot:
     image: "penpotapp/frontend:${PENPOT_VERSION:-latest}"
-    container_name: penpot-frontend
+    container_name: penpot
     restart: always
     ports:
       - $PORT:$PORT_EXPOSED
@@ -40,9 +40,9 @@ services:
       <<: [*penpot-flags, *penpot-public-uri, *penpot-http-body-size]
       PENPOT_SECRET_KEY: $SECRET_KEY
       PENPOT_PREPL_HOST: 0.0.0.0
-      PENPOT_DATABASE_URI: postgresql://postgres/penpot
+      PENPOT_DATABASE_URI: postgresql://penpot-postgres/penpot
       PENPOT_DATABASE_USERNAME: penpot
-      PENPOT_DATABASE_PASSWORD: "${PASSWORD}"
+      PENPOT_DATABASE_PASSWORD: $PASSWORD
       PENPOT_REDIS_URI: redis://penpot-valkey/0
       PENPOT_ASSETS_STORAGE_BACKEND: assets-fs
       PENPOT_STORAGE_ASSETS_FS_DIRECTORY: /opt/data/assets
@@ -56,7 +56,7 @@ services:
       penpot-valkey:
         condition: service_healthy
     environment:
-      PENPOT_PUBLIC_URI: http://frontend:8080
+      PENPOT_PUBLIC_URI: "https://${DOMAIN}"
       PENPOT_REDIS_URI: redis://penpot-valkey/0
 
   penpot-postgres:
@@ -73,10 +73,10 @@ services:
     volumes:
       - db:/var/lib/postgresql/data
     environment:
-      - POSTGRES_INITDB_ARGS=--data-checksums
-      - POSTGRES_DB=penpot
-      - POSTGRES_USER=penpot
-      - POSTGRES_PASSWORD="${PASSWORD}"
+      POSTGRES_INITDB_ARGS: --data-checksums
+      POSTGRES_DB: penpot
+      POSTGRES_USER: penpot
+      POSTGRES_PASSWORD: $PASSWORD
 
   penpot-valkey:
     image: valkey/valkey:8.1
