@@ -57,7 +57,7 @@
     {
       "name": "template-nuxt",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/template-nuxt.tar.gz",
-      "port": 7903
+      "port": 0
     }
 ,
     {
