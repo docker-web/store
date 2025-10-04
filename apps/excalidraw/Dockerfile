@@ -11,7 +11,7 @@ RUN sed -i 's/4 \* 1024 \* 1024/1500 * 1024 * 1024/' excalidraw-app/app_constant
 RUN sed -i 's/4 \* 1024 \* 1024/1500 * 1024 * 1024/' packages/common/src/constants.ts
 
 # Installer et builder
-RUN npm ci
+RUN npm install
 RUN npm run build
 
 # Étape finale : servir avec nginx
