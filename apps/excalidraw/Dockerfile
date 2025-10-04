@@ -5,7 +5,10 @@ RUN git clone https://github.com/excalidraw/excalidraw.git /app
 WORKDIR /app
 
 # Modifier la limite max (1500 MB)
-RUN sed -i 's/4 \* 1024 \* 1024/1500 * 1024 * 1024/' src/constants.ts
+RUN sed -i 's/4 \* 1024 \* 1024/1500 * 1024 * 1024/' excalidraw-app/app_constants.ts
+
+# Dans packages/common/src/constants.ts
+RUN sed -i 's/4 \* 1024 \* 1024/1500 * 1024 * 1024/' packages/common/src/constants.ts
 
 # Installer et builder
 RUN npm ci
