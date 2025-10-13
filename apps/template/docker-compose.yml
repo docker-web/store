@@ -6,7 +6,6 @@ services:
     ports:
       - $PORT:$PORT_EXPOSED
     volumes:
-      - "${MEDIA_DIR}:/mnt/media"
       # - index.html:/usr/share/nginx/html/index.html
     environment:
       VIRTUAL_HOST: "${DOMAIN}"
