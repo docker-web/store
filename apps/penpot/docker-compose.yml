@@ -57,7 +57,10 @@ services:
         condition: service_healthy
     environment:
       PENPOT_PUBLIC_URI: "https://${DOMAIN}"
+      PENPOT_INTERNAL_URI: "http://penpot-frontend:8080"
       PENPOT_REDIS_URI: redis://penpot-valkey/0
+    extra_hosts:
+      - "${DOMAIN}:172.17.0.1"
 
   penpot-postgres:
     image: "postgres:15"

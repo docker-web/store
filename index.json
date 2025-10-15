@@ -61,6 +61,12 @@
     }
 ,
     {
+      "name": "template-nuxt-ecommerce",
+      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/template-nuxt-ecommerce.tar.gz",
+      "port": 7710
+    }
+,
+    {
       "name": "transmission",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/transmission.tar.gz",
       "port": 9091
