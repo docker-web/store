@@ -3,49 +3,67 @@
     {
       "name": "ersatztv",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/ersatztv.tar.gz",
-      "port": 7706
+      "port": 0
     }
 ,
     {
       "name": "excalidraw",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/excalidraw.tar.gz",
-      "port": 7703
+      "port": 0
     }
 ,
     {
       "name": "gitea",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/gitea.tar.gz",
-      "port": 7701
+      "port": 0
+    }
+,
+    {
+      "name": "graphhopper",
+      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/graphhopper.tar.gz",
+      "port": 0
     }
 ,
     {
       "name": "jellyfin",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/jellyfin.tar.gz",
-      "port": 7702
+      "port": 0
     }
 ,
     {
       "name": "launcher",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/launcher.tar.gz",
-      "port": 7700
+      "port": 0
     }
 ,
     {
       "name": "nextcloud",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/nextcloud.tar.gz",
-      "port": 7704
+      "port": 0
+    }
+,
+    {
+      "name": "nuxt",
+      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/nuxt.tar.gz",
+      "port": 0
     }
 ,
     {
       "name": "penpot",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/penpot.tar.gz",
-      "port": 7904
+      "port": 0
     }
 ,
     {
       "name": "proxy",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/proxy.tar.gz",
-      "port": 80
+      "port": 0
+    }
+,
+    {
+      "name": "slskd",
+      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/slskd.tar.gz",
+      "port": 0
     }
 ,
     {
@@ -61,21 +79,15 @@
     }
 ,
     {
-      "name": "template-nuxt-ecommerce",
-      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/template-nuxt-ecommerce.tar.gz",
-      "port": 7710
-    }
-,
-    {
       "name": "transmission",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/transmission.tar.gz",
-      "port": 9091
+      "port": 0
     }
 ,
     {
       "name": "umami",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/umami.tar.gz",
-      "port": 7709
+      "port": 0
     }
   ]
 }
