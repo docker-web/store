@@ -19,7 +19,7 @@ do
   unset FROM
   unset TO
 
-  [[ -f "$APP_PATH/$FILENAME_CONFIG" ]] && source "$APP_PATH/$FILENAME_CONFIG"
+  [[ -f "$APP_PATH/$FILENAME_ENV" ]] && source "$APP_PATH/$FILENAME_ENV"
   [[ -f "$APP_PATH/$FILENAME_ENV" ]] && source "$APP_PATH/$FILENAME_ENV"
   [[ $LAUNCHER_HIDDEN == true ]] && continue
   if [[ $(docker ps -f "name=$APP_NAME" -f "status=running" --format "{{.Names}}") ]]
@@ -76,7 +76,7 @@ then
   cat "$FOLDER_WEB/empty.html" >> "$FOLDER_WEB/body.html"
 else
   # ALIASES
-  source "$PATH_DOCKERWEB_APPS/launcher/$FILENAME_CONFIG"
+  source "$PATH_DOCKERWEB_APPS/launcher/$FILENAME_ENV"
   if [[ $ALIASES ]]
   then
     for ALIAS in $ALIASES

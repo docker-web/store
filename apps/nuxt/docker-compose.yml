@@ -1,10 +1,12 @@
 services:
   APP-NAME:
-    image: nginx:alpine
+    image: eggplanet/nuxt
     container_name: APP-NAME
     restart: unless-stopped
     ports:
       - $PORT:$PORT_EXPOSED
+    volumes:
+      # - index.html:/usr/share/nginx/html/index.html
     environment:
       VIRTUAL_HOST: "${DOMAIN}"
       LETSENCRYPT_HOST: "${DOMAIN}"

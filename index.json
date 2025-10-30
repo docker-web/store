@@ -19,12 +19,6 @@
     }
 ,
     {
-      "name": "graphhopper",
-      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/graphhopper.tar.gz",
-      "port": 0
-    }
-,
-    {
       "name": "jellyfin",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/jellyfin.tar.gz",
       "port": 0
@@ -57,12 +51,6 @@
     {
       "name": "proxy",
       "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/proxy.tar.gz",
-      "port": 0
-    }
-,
-    {
-      "name": "slskd",
-      "url": "https://raw.githubusercontent.com/docker-web/store/main/archives/slskd.tar.gz",
       "port": 0
     }
 ,
