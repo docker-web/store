@@ -2,6 +2,7 @@
 
 # Configuration de l'application Nuxt
 export APP_NAME="app-name"
+export REPO_NAME="app-name"
 export DOMAIN="${APP_NAME}.${MAIN_DOMAIN}"
 export PORT=""
 export PORT_EXPOSED="3000"

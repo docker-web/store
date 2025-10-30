@@ -1,7 +1,7 @@
 services:
-  APP-NAME:
+  app-name:
     image: nginx:alpine
-    container_name: APP-NAME
+    container_name: app-name
     restart: unless-stopped
     ports:
       - $PORT:$PORT_EXPOSED
