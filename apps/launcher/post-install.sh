@@ -60,7 +60,7 @@ do
           then
             docker exec launcher test ! -f "/usr/share/nginx/html/$NAME_REDIRECTION.svg" && docker cp "$APP_PATH/$NAME_REDIRECTION.svg" "launcher:/usr/share/nginx/html/$NAME_REDIRECTION.svg" > /dev/null
           else
-            docker cp "$PATH_DOCKERWEB_APPS/launcher/docker-web.svg" "launcher:/usr/share/nginx/html/$NAME_REDIRECTION.svg" > /dev/null
+            docker cp "$PATH_DOCKERWEB_APPS/launcher/web/svg/$NAME_REDIRECTION.svg" "launcher:/usr/share/nginx/html/$NAME_REDIRECTION.svg" > /dev/null
           fi
           cat "$FOLDER_WEB/$NAME_REDIRECTION.html" >> "$FOLDER_WEB/body.html"
           rm "$FOLDER_WEB/$NAME_REDIRECTION.html"
@@ -87,7 +87,7 @@ else
       sed -i "s|__LINK_TYPE__|alias|g" "$FOLDER_WEB/$NAME_ALIAS.html"
       sed -i "s|__NAME__|$NAME_ALIAS|g" "$FOLDER_WEB/$NAME_ALIAS.html"
       sed -i "s|__DOMAIN__|$URL_ALIAS|g" "$FOLDER_WEB/$NAME_ALIAS.html"
-      [[ -f "$PATH_DOCKERWEB_APPS/launcher/$NAME_ALIAS.svg" ]] && docker cp "$PATH_DOCKERWEB_APPS/launcher/$NAME_ALIAS.svg" "launcher:/usr/share/nginx/html/$NAME_ALIAS.svg" > /dev/null
+      [[ -f "$PATH_DOCKERWEB_APPS/launcher/web/svg/$NAME_ALIAS.svg" ]] && docker cp "$PATH_DOCKERWEB_APPS/launcher/web/svg/$NAME_ALIAS.svg" "launcher:/usr/share/nginx/html/$NAME_ALIAS.svg" > /dev/null
       cat "$FOLDER_WEB/$NAME_ALIAS.html" >> "$FOLDER_WEB/body.html"
       rm "$FOLDER_WEB/$NAME_ALIAS.html"
     done
@@ -98,6 +98,6 @@ cat "$FOLDER_WEB/body.html" >> "$FOLDER_WEB/index.html"
 cat "$FOLDER_WEB/bottom.html" >> "$FOLDER_WEB/index.html"
 
 docker cp "$FOLDER_WEB/index.html" "launcher:/usr/share/nginx/html/" > /dev/null
-docker exec launcher test ! -f /usr/share/nginx/html/docker-web.svg && docker cp "$PATH_DOCKERWEB_APPS/launcher/docker-web.svg" "launcher:/usr/share/nginx/html/" > /dev/null
+docker exec launcher test ! -f /usr/share/nginx/html/docker-web.svg && docker cp "$PATH_DOCKERWEB_APPS/launcher/web/svg/docker-web.svg" "launcher:/usr/share/nginx/html/" > /dev/null
 
 docker exec launcher chmod -R 755 /usr/share/nginx/html
